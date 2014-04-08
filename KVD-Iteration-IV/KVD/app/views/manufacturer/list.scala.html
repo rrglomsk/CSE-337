@@ -1,0 +1,46 @@
+@(manufacturers: List[Manufacturer])
+
+@main("List of Manufacturers") {
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-inline" role="form" method="get" action="/manufacturer/search">
+            <div class="form-group">
+                <input type="text" class="form-control" style="width: 600px;" id="search"
+                       name="queryString" placeholder="Search Manufacturer">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
+    </div>
+</div>
+
+<div  class="row">
+    @for( m <- manufacturers){
+    <div style="margin: 20px 0px;">
+        <div class="col-md-6" >
+            <div class="well well-sm"  style="min-height: 150px;">
+                <div class="pull-left">
+                    <address>
+                        <strong>@m.name</strong><br><br>
+                        <div style="margin-left: 20px">
+                            @m.street1<br>
+                            @if(m.street2 != ""){
+                            @m.street2<br>
+                            }
+                            @m.city, @m.state @m.zipcode<br>
+                            <abbr title="Phone">P:</abbr> @m.phone<br>
+                            <a href="mailto:#">@m.email</a>
+                        </div>
+                    </address>
+                </div>
+                <div class="pull-right">
+                    <p><a style="width: 100px;" class="btn btn-success btn-large" href="#">List Products</a></p>
+                    <p><a style="width: 100px;" class="btn btn-primary btn-large" href="#">Update</a></p>
+                    <p><a style="width: 100px;" class="btn btn-danger btn-large" href="#">Delete</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+}

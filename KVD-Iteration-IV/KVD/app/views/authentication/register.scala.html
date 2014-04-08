@@ -1,0 +1,41 @@
+@(form: Form[User])
+
+@main("Registeration form") {
+<div class="container">
+    <section id="content">
+        <form action="@routes.UserController.save()" method="post">
+            <h1>Register Form</h1>
+            <div>
+                <input type="text" placeholder="First Name" required="" id="firstname" name="firstName" value="@form("firstName").value" />
+            </div>
+            <div>
+                <input type="text" placeholder="Last Name" required="" id="lastname" name="lastName" value="@form("lastName").value"/>
+            </div>
+            <div>
+                <input type="text" placeholder="Email Address" required="" id="username" name="email" value="@form("email").value" />
+            </div>
+            <div>
+                <input type="password" placeholder="Password" required="" id="password" name="password" value="@form("password").value"/>
+            </div>
+            <div>
+                <input type="password" placeholder="Password Conform" required="" id="confirmpassword" name="confirmpassword" value="@form("confirmpassword").value"/>
+            </div>
+            <input type="hidden" placeholder="Role" name="role" value="@form("role").value"/>
+            <div>
+                <input type="submit" value="Log in" />
+                <a href="#">Lost your password?</a>
+                <a href="@routes.AuthenticationController.login()">Login</a>
+            </div>
+        </form><!-- form -->
+    </section><!-- content -->
+</div><!-- container -->
+<script>
+    $(document).ready(function (){
+        loadjscssfile("@routes.Assets.at("stylesheets/login-register.css")", "css");
+    })
+    // We cal alternately use
+    $('#content').load(function (){
+        //loadjscssfile("@routes.Assets.at("stylesheets/login-register.css")", "css");
+    })
+</script>
+}

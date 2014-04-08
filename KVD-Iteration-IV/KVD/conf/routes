@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.ProductController.list()
+GET     /product/list               controllers.ProductController.list()
+GET     /product/search             controllers.ProductController.search(queryString: String)
+GET     /product/create             controllers.ProductController.create(id: Long ?= 0)
+GET     /product/update/:id         controllers.ProductController.create(id: Long)
+POST    /product/save               controllers.ProductController.save()
+
+# Manufacturer routes
+GET     /manufacturer/create             controllers.ManufacturerController.create(id: Long ?= 0)
+GET     /manufacturer/update/:id         controllers.ManufacturerController.create(id: Long)
+POST    /manufacturer/save               controllers.ManufacturerController.save()
+GET     /manufacturer/list               controllers.ManufacturerController.list()
+
+# Authentication routes
+GET     /login                      controllers.AuthenticationController.login()
+POST    /authenticate               controllers.AuthenticationController.authenticate()
+GET     /logout                     controllers.AuthenticationController.logout()
+
+# Routes for user class
+GET     /user/register              controllers.UserController.register()
+POST    /user/save                  controllers.UserController.save()
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
