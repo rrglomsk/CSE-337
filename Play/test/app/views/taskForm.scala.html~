@@ -1,0 +1,14 @@
+@(taskForm: Form[Task])
+@import helper._
+
+@main("Task Form") {
+	<h1>Add New Task</h1>
+	@helper.form(action = routes.TaskController.save()) {
+		@helper.inputText(taskForm("description"), '_label -> "Task", 'size -> 128 )
+			@helper.inputDate(taskForm("endDate"), '_label -> "Task End Date" )
+		<div class="actions">
+			<input type="submit" value="Create Task" class="btn primary"> or
+			<a href="@routes.TaskController.listTasks()" class="btn">Cancel</a>
+		</div>
+		}
+}

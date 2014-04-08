@@ -1,0 +1,15 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+    <h1> @message </h1>
+    <form style="..." name="input" action="/greetme" method="get">
+    <fieldset>
+    	<legend>Who are you?</legend>
+    	First Name: <input type="text" name ="first_name"><br>
+    	Last Name: <input type="text" name="last_name"><br>
+    	<input type ="submit" value="Submit">
+    </fieldset>
+    </form>
+
+}

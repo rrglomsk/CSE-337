@@ -1,0 +1,36 @@
+# This seeds database
+
+users:
+  - !!models.User
+    firstName: Nilesh
+    lastName: Patel
+    role: Admin
+    password: password
+    email: n@c.com
+
+  - !!models.User
+    firstName: John
+    lastName: Doe
+    email: john@doe.com
+    password: password
+    role: Customer
+
+manufacturers:
+  - &nike !!models.Manufacturer
+    name: Nike
+    street1: 1234 Detroit River
+    street2:
+    city: Royal Oak
+    state: MI
+    zipcode: 12345
+    email: support@nike.com
+    phone: (111)222-3333
+
+products:
+  - !!models.Product
+    name: The Blood Sugar Solution 10-Day Detox Diet Activate Your Body's Natural Ability to Burn Fat and Lose Weight Fast
+    description: Fans of Hyman’s best-selling The Blood Sugar Solution (2012) will undoubtedly want to read his lose-weight-faster sequel. A medical doctor on the advisory board of The Dr. Oz Show, Hyman sensibly encourages readers to avoid processed foods during a 10-day detox. And he makes a strong case for eliminating sodas from the food stamp program, lobbying Congress to tax soda and sugar-sweetened beverages, and asking local stores to stock healthier items. He also provides many healthy, tasty-sounding, if time-consuming recipes, complete with calorie, fat, fiber, carbohydrate, protein, and cholesterol counts. But Hyman, now chairman of the Institute for Functional Medicine, may los
+    image_url:
+    price: 200.98
+    rating: 4
+    manufacturer: *nike

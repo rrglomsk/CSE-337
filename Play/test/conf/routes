@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                  controllers.TaskController.listTasks()
+GET		/new							   controllers.TaskController.create()
+GET     /greetme                           controllers.Application.greetme(first_name: String, last_name: String)
+GET		/save							   controllers.TaskController.save()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

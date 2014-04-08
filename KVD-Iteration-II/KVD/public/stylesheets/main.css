@@ -1,0 +1,15 @@
+.plan-price {
+	width: 120px;
+	height: 120px;
+	line-height: 120px;
+	font-size: 22px;
+	font-weight: bold;
+	color: white;
+	background: #595f6b;
+	border-radius: 60px;
+}
+.plan-price > span {
+	font-size: 12px;
+	font-weight: normal;
+	color: rgba(255, 255, 255, 0.9);
+}
